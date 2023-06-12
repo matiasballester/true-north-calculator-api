@@ -12,4 +12,4 @@ WORKDIR /app
 
 COPY --from=MAVEN_BUILD /build/target/calculator-0.0.1-SNAPSHOT.jar /app/calculator.jar
 
-ENTRYPOINT ["java", "-jar", "calculator.jar"]
+ENTRYPOINT ["java", "-jar", "-Dspring.profiles.active=prod", "calculator.jar"]
